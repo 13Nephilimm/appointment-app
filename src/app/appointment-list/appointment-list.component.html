@@ -1,20 +1,42 @@
-<div>
-  <input
-    [(ngModel)]="newAppointmentTitle"
-    placeholder="Appointment description"
-  />
-  <input
-    [(ngModel)]="newAppointmentDate"
-    type="date"
-    placeholder="Appointment date"
-  />
-  <button (click)="addAppointment()">Add</button>
-</div>
+<header><h1>Appointment Manager</h1></header>
+<section class="appointments-section">
+  <div class="creation-container">
+    <h2>Create New Appointments</h2>
+    <div class="inputs-container">
+      <div class="input-container">
+        <label>Enter Appointment Title</label>
+        <input
+          [(ngModel)]="newAppointmentTitle"
+          placeholder="Appointment title"
+        />
+      </div>
+      <div class="input-container">
+        <label>Enter Appointment Date</label>
+        <input
+          [(ngModel)]="newAppointmentDate"
+          type="date"
+          placeholder="Appointment date"
+        />
+      </div>
+    </div>
+    <button (click)="addAppointment()" class="add-btn">Add New</button>
+  </div>
 
-<ul>
-  <li *ngFor="let appointment of appointments">
-    {{ appointment.title }}
-    {{ appointment.date | date : "dd.MM.yyyy" }}
-    <button (click)="deleteAppointment(appointment.id)">Delete</button>
-  </li>
-</ul>
+  <div class="appointments-container">
+    <h2>Current Appointments</h2>
+    <ul class="appointments-cards-container">
+      <li *ngFor="let appointment of appointments" class="appointment-card">
+        <div class="appointment-info-container">
+          <h3 class="appointment-title">{{ appointment.title }}</h3>
+          <p class="appointment-date">
+            {{ appointment.date | date : "dd.MM.yyyy" }}
+          </p>
+        </div>
+
+        <button class="delete-btn" (click)="deleteAppointment(appointment.id)">
+          Delete
+        </button>
+      </li>
+    </ul>
+  </div>
+</section>
