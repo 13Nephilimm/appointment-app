@@ -99,3 +99,50 @@ button:hover {
   flex-direction: column;
   gap: 4px;
 }
+
+@media only screen and (max-width: 810px) {
+  .creation-container,
+  .appointments-container {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  .creation-container,
+  .appointments-container {
+    width: 300px;
+  }
+
+  .creation-container h2,
+  .appointments-container h2 {
+    font-size: 18px;
+  }
+
+  h3,
+  p,
+  label,
+  input,
+  button {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  .creation-container,
+  .appointments-container {
+    width: 280px;
+  }
+
+  .creation-container h2,
+  .appointments-container h2 {
+    font-size: 16px;
+  }
+}

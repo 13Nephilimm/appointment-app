@@ -8,6 +8,7 @@
 
 html {
   background-color: #e3eeff;
+  overflow-x: hidden;
 }
 
 ul,
